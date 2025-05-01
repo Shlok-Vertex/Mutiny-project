@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Adventure | Wanderlust</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <h1>Aerovia</h1>
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#destinations">Destinations</a></li>
+                    <li><a href="index.html#packages">Packages</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html" class="btn btn-primary nav-btn">Aerovia</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Booking Hero Section -->
+    <section class="booking-hero">
+    <!-- Parallax Background with Multiple Layers -->
+    <div class="hero-parallax">
+        <div class="parallax-layer layer-1" data-depth="0.1"></div>
+        <div class="parallax-layer layer-2" data-depth="0.3"></div>
+        <div class="parallax-layer layer-3" data-depth="0.6"></div>
+        <div class="parallax-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="booking-hero-content">
+            <!-- Animated Main Heading -->
+            <h1 class="hero-title">
+                <span class="title-word">Book</span>
+                <span class="title-word">Your</span>
+                <span class="title-word">Dream</span>
+                <span class="title-word">Vacation</span>
+            </h1>
+            
+            <!-- Animated Subtitle -->
+            <p class="hero-subtitle">Secure your adventure with our seamless booking experience</p>
+            
+            <!-- Interactive Booking Progress -->
+            <div class="booking-progress">
+                <div class="progress-steps">
+                    <div class="progress-step active">
+                        <div class="step-icon"><i class="fas fa-user"></i></div>
+                        <span>Your Details</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+                        <span>Payment</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+                        <span>Confirmation</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 33%"></div>
+                </div>
+            </div>
+            
+            <!-- Animated Scrolling Prompt -->
+            <div class="scroll-prompt">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrows">
+                    <span class="arrow"></span>
+                    <span class="arrow"></span>
+                    <span class="arrow"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Booking Form Section -->
+    <section class="booking-form-section">
+        <div class="container">
+            <div class="booking-form-container">
+                <div class="booking-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <p>Your Details</p>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <p>Payment</p>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <p>Confirmation</p>
+                    </div>
+                </div>
+
+                <form id="bookingForm" class="booking-form">
+                    <!-- Step 1: Personal Details -->
+                    <div class="form-step active" data-step="1">
+                        <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="fullName">Full Name*</label>
+                                <input type="text" id="fullName" required>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email*</label>
+                                <input type="email" id="email" required>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number*</label>
+                                <input type="tel" id="phone" required>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country*</label>
+                                <select id="country" required>
+                                    <option value="">Select Country</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="JP">Japan</option>
+                                </select>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="travelers">Number of Travelers*</label>
+                                <select id="travelers" required>
+                                    <option value="">Select</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 People</option>
+                                    <option value="3">3 People</option>
+                                    <option value="4">4 People</option>
+                                    <option value="5+">5+ People</option>
+                                </select>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="travelDate">Travel Date*</label>
+                                <input type="date" id="travelDate" required>
+                                <div class="error-message"></div>
+                            </div>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary prev-step" disabled>Back</button>
+                            <button type="button" class="btn btn-primary next-step">Continue <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- Step 2: Payment Details -->
+                    <div class="form-step" data-step="2">
+                        <h2><i class="fas fa-credit-card"></i> Payment Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="cardName">Name on Card*</label>
+                                <input type="text" id="cardName" required>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group card-input-container">
+                                <label for="cardNumber">Card Number*</label>
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                <div class="card-type-icon"></div>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="expiry">Expiry Date*</label>
+                                <input type="text" id="expiry" placeholder="MM/YY" required>
+                                <div class="error-message"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV*</label>
+                                <input type="text" id="cvv" placeholder="123" required>
+                                <div class="error-message"></div>
+                            </div>
+                        </div>
+                        <div class="form-navigation">
+                            <button type="button" class="btn btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button type="button" class="btn btn-primary next-step">Complete Booking <i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Confirmation -->
+                    <div class="form-step" data-step="3">
+                        <div class="confirmation-message">
+                            <div class="confirmation-animation">
+                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                    <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                </svg>
+                            </div>
+                            <h2>Booking Confirmed!</h2>
+                            <p class="confirmation-text">Thank you for booking with Wanderlust Adventures. Your adventure begins soon!</p>
+                            <div class="booking-summary">
+                                <h3><i class="fas fa-receipt"></i> Booking Summary</h3>
+                                <div class="summary-grid" id="bookingSummary"></div>
+                            </div>
+                            <div class="confirmation-actions">
+                                <a href="index.html" class="btn btn-primary"><i class="fas fa-home"></i> Back to Home</a>
+                                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> Download Receipt</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.png" alt="Aerovia" class="footer-logo">
+                    <p>Making dream vacations a reality since 2010. We specialize in creating unforgettable travel experiences tailored to your desires.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#destinations">Destinations</a></li>
+                        <li><a href="index.html#packages">Packages</a></li>
+                        <li><a href="index.html#testimonials">Testimonials</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Booking Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get special offers and travel inspiration.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required style="border: none; width: 170px; outline: none; padding: 4px; border-radius: 20px;">
+                        <button type="submit" class="btn btn-small btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aerovia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner-circle"></div>
+            <p>Processing your booking...</p>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/booking.js"></script>
+</body>
+</html>

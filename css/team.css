@@ -1,0 +1,287 @@
+    /* Global Styles */
+    :root {
+        --primary: #3498db;
+        --secondary: #2ecc71;
+        --dark: #2c3e50;
+        --light: #ecf0f1;
+        --accent: #e74c3c;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+        color: var(--dark);
+        overflow-x: hidden;
+    }
+    
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        position: relative;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: white;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    
+    section {
+        padding: 60px 0;
+        position: relative;
+    }
+    
+    h1, h2, h3 {
+        margin-bottom: 20px;
+    }
+    
+    p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+    
+    .text-center {
+        text-align: center;
+        color: white;
+    }
+    
+    /* Team Section */
+    .team {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .team::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #3498db, #2ecc71);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+        z-index: -2;
+    }
+    
+    .team::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.05);
+        z-index: -1;
+    }
+    
+    @keyframes gradientBG {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .team-member {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        transition: all 0.4s ease;
+        text-align: center;
+        padding: 30px 20px;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .team-member:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+        background-color: white;
+    }
+    
+    .team-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px;
+        border: 5px solid rgba(255,255,255,0.8);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .team-member:hover .team-img {
+        border-color: var(--primary);
+        transform: rotate(5deg);
+    }
+    
+    .team-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
+    
+    .team-member:hover .team-img img {
+        transform: scale(1.1);
+    }
+    
+    .team-member h3 {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+        color: var(--dark);
+    }
+    
+    .team-member p {
+        color: #666;
+        margin-bottom: 15px;
+        font-weight: 500;
+    }
+    
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+    }
+    
+    .social-links a:hover {
+        background-color: var(--dark);
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    /* Floating bubbles animation */
+    .bubbles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+    
+    .bubble {
+        position: absolute;
+        bottom: -100px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        animation: rise 15s infinite ease-in;
+    }
+    
+    .bubble:nth-child(1) {
+        width: 40px;
+        height: 40px;
+        left: 10%;
+        animation-duration: 8s;
+    }
+    
+    .bubble:nth-child(2) {
+        width: 20px;
+        height: 20px;
+        left: 20%;
+        animation-duration: 12s;
+        animation-delay: 1s;
+    }
+    
+    .bubble:nth-child(3) {
+        width: 50px;
+        height: 50px;
+        left: 35%;
+        animation-duration: 10s;
+        animation-delay: 2s;
+    }
+    
+    .bubble:nth-child(4) {
+        width: 30px;
+        height: 30px;
+        left: 50%;
+        animation-duration: 15s;
+        animation-delay: 0s;
+    }
+    
+    .bubble:nth-child(5) {
+        width: 25px;
+        height: 25px;
+        left: 65%;
+        animation-duration: 11s;
+        animation-delay: 1s;
+    }
+    
+    .bubble:nth-child(6) {
+        width: 45px;
+        height: 45px;
+        left: 75%;
+        animation-duration: 14s;
+        animation-delay: 3s;
+    }
+    
+    .bubble:nth-child(7) {
+        width: 35px;
+        height: 35px;
+        left: 90%;
+        animation-duration: 9s;
+        animation-delay: 2s;
+    }
+    
+    @keyframes rise {
+        0% {
+            bottom: -100px;
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(100px);
+        }
+        100% {
+            bottom: 1000px;
+            transform: translateX(-100px);
+        }
+    }

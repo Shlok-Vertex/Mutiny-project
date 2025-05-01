@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerovia | Explore the World</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/team.css">
+    <link rel="shortcut icon" href="./images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--============== Navbar ================-->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <h1>Aerovia <i class="fa-solid fa-plane-departure"></i></h1>
+                </a>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                    <li><a href="#packages" class="nav-link">Packages</a></li>
+                    <li><a href="#developers" class="nav-link">Developers</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link" id="login-btn">Login</a></li>
+                    <li><a href="#" class="btn btn-primary nav-btn" id="signup-btn">Sign Up</a></li>
+                    <li><a href="book.html" class="btn btn-primary nav-btn">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!--================= Hero Section ==================-->
+    <section class="hero" id="home">
+    <!-- Video Background -->
+    <div class="video-background">
+        <video autoplay muted loop playsinline poster="images/hero-fallback.jpg">
+            <source src="./videos/vid.mp4" type="video/mp4">
+            <img src="./images/img.jpg" alt="Travel Adventure">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+    
+    <div class="container">
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Explore the world's most breathtaking destinations with our expertly crafted travel experiences.</p>
+            <div class="hero-btns">
+                <a href="#destinations" class="btn btn-primary">Explore Destinations</a>
+                <a href="#video-modal" class="btn btn-secondary video-btn">Watch Video <i class="fas fa-play"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--============= Video Modal =============-->
+<div id="video-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe width="100%" height="500" src="" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+    </div>
+</div>
+
+    <!--================ Search Section ================-->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <form>
+                    <div class="form-group">
+                        <label for="destination"><i class="fas fa-map-marker-alt"></i> Destination</label>
+                        <input type="text" id="destination" placeholder="Where to?">
+                    </div>
+                    <div class="form-group">
+                        <label for="date"><i class="far fa-calendar-alt"></i> Date</label>
+                        <input type="date" id="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="travelers"><i class="fas fa-user-friends"></i> Travelers</label>
+                        <select id="travelers">
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5+">5+ People</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search <i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--================ Destinations Section ================-->
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Destinations</h2>
+                <p>Explore our most sought-after travel destinations around the globe.</p>
+            </div>
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <div class="card-img">
+                        <img src="images/img1.jpg" alt="Bali, Indonesia">
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <h3>Bali, Indonesia</h3>
+                                <p>From $899</p>
+                                <a href="#" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Bali, Indonesia</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5 (128 reviews)</span>
+                        </div>
+                        <p>7 days, 6 nights</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-img">
+                        <img src="images/img2.jpg" alt="Santorini, Greece">
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <h3>Santorini, Greece</h3>
+                                <p>From $1299</p>
+                                <a href="#" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Santorini, Greece</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0 (96 reviews)</span>
+                        </div>
+                        <p>5 days, 4 nights</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-img">
+                        <img src="images/img3.jpg" alt="Kyoto, Japan">
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <h3>Kyoto, Japan</h3>
+                                <p>From $1299</p>
+                                <a href="#" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Kyoto, Japan</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.0 (130 reviews)</span>
+                        </div>
+                        <p>12 days, 11 nights</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-img">
+                        <img src="images/img7.jpg" alt="Kyoto, Japan">
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <h3>Paris, France</h3>
+                                <p>From $1599</p>
+                                <a href="#" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Paris, France</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.0 (120 reviews)</span>
+                        </div>
+                        <p>10 days, 9 nights</p>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-img">
+                        <img src="images/img5.jpg" alt="Kyoto, Japan">
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <h3>Tamil Nadu, India</h3>
+                                <p>From $1499</p>
+                                <a href="#" class="btn btn-small">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Tamil Nadu, India</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.0 (109 reviews)</span>
+                        </div>
+                        <p>9 days, 8 nights</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-footer">
+                <a href="#destinations" class="btn btn-secondary">View All Destinations <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!--================ Packages Section ================-->
+    <section class="packages" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2>Travel Packages</h2>
+                <p>All-inclusive packages tailored to your travel style.</p>
+            </div>
+            <div class="package-tabs">
+                <button class="tab-btn active" data-tab="all">All</button>
+                <button class="tab-btn" data-tab="adventure">Adventure</button>
+                <button class="tab-btn" data-tab="luxury">Luxury</button>
+                <button class="tab-btn" data-tab="family">Family</button>
+                <button class="tab-btn" data-tab="romantic">Romantic</button>
+            </div>
+            <div class="package-grid">
+                <div class="package-card" data-category="luxury romantic">
+                    <div class="package-img">
+                        <img src="images/img2.jpg" alt="Luxury Santorini Getaway">
+                        <span class="package-badge">Best Seller</span>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Santorini, Greece</span>
+                        </div>
+                        <h3>Luxury Santorini Getaway</h3>
+                        <p>Experience the iconic white-washed buildings and breathtaking sunsets in style.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$1299</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card" data-category="luxury romantic">
+                    <div class="package-img">
+                        <img src="images/img6.jpg" alt="Luxury Santorini Getaway">
+                        <span class="package-badge">Best Seller</span>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Santorini, Greece</span>
+                        </div>
+                        <h3>Luxury Santorini Getaway</h3>
+                        <p>Experience the iconic white-washed buildings and breathtaking sunsets in style.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$1299</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card" data-category="luxury romantic">
+                    <div class="package-img">
+                        <img src="images/img4.jpg" alt="Luxury Santorini Getaway">
+                        <span class="package-badge">Best Seller</span>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 5 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Santorini, Greece</span>
+                        </div>
+                        <h3>Luxury Santorini Getaway</h3>
+                        <p>Experience the iconic white-washed buildings and breathtaking sunsets in style.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$1299</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card" data-category="adventure">
+                    <div class="package-img">
+                        <img src="images/img1.jpg" alt="Bali Adventure Tour">
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 7 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</span>
+                        </div>
+                        <h3>Bali Adventure Tour</h3>
+                        <p>Surf, hike volcanoes, and explore ancient temples on this action-packed journey.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$899</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card" data-category="adventure">
+                    <div class="package-img">
+                        <img src="images/img6.jpg" alt="Bali Adventure Tour">
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 7 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</span>
+                        </div>
+                        <h3>Bali Adventure Tour</h3>
+                        <p>Surf, hike volcanoes, and explore ancient temples on this action-packed journey.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$899</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card" data-category="adventure">
+                    <div class="package-img">
+                        <img src="images/img3.jpg" alt="Bali Adventure Tour">
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 7 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</span>
+                        </div>
+                        <h3>Bali Adventure Tour</h3>
+                        <p>Surf, hike volcanoes, and explore ancient temples on this action-packed journey.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$899</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card" data-category="family">
+                    <div class="package-img">
+                        <img src="images/img5.jpg" alt="Family Fun in Kyoto">
+                        <span class="package-badge">Family Friendly</span>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 10 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kyoto, Japan</span>
+                        </div>
+                        <h3>Family Fun in Kyoto</h3>
+                        <p>Discover Japan's cultural heart with activities perfect for all ages.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$1499</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card" data-category="family">
+                    <div class="package-img">
+                        <img src="images/img5.jpg" alt="Family Fun in Kyoto">
+                        <span class="package-badge">Family Friendly</span>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 10 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kyoto, Japan</span>
+                        </div>
+                        <h3>Family Fun in Kyoto</h3>
+                        <p>Discover Japan's cultural heart with activities perfect for all ages.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$1499</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="package-card" data-category="family">
+                    <div class="package-img">
+                        <img src="images/img1.jpg" alt="Family Fun in Kyoto">
+                        <span class="package-badge">Family Friendly</span>
+                    </div>
+                    <div class="package-content">
+                        <div class="package-meta">
+                            <span><i class="far fa-clock"></i> 10 Days</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kyoto, Japan</span>
+                        </div>
+                        <h3>Family Fun in Kyoto</h3>
+                        <p>Discover Japan's cultural heart with activities perfect for all ages.</p>
+                        <div class="package-footer">
+                            <div class="package-price">
+                                <span>From</span>
+                                <h4>$1499</h4>
+                            </div>
+                            <a href="#" class="btn btn-small">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--================ Developer Section ================-->
+    <section class="team" id="developers">
+        <div class="bubbles">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="text-center">The passionate travel experts behind your perfect journey.</p>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="./images/ujjwal-pic.jpg" alt="Ujjawal">
+                    </div>
+                    <h3>Ujjawal Kumar</h3>
+                    <p>Travel Enthusiast</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1Qqk3kVKd9/"><i class="fab fa-facebook"></i></a>
+                        <a href="http://github.com/ujjwal-vertex"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/_ujjwal_tripathi_7?igsh=MXR5YjE4MnRtbHp5Yg=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ujjawal-kumar-169297333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="./images/shlok-pic.jpg" alt="Shlok">
+                    </div>
+                    <h3>Shlok Srivastava</h3>
+                    <p>Destination Expert</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="http://github.com/shlok-vertex"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/shlok-sri/"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="./images/ripu-pic.jpg" alt="Ripu">
+                    </div>
+                    <h3>Ripusudan Mehta</h3>
+                    <p>Adventure Specialist</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1WG7KJNBjB/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://github.com/ripusudanmehta"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/itz___mehta?igsh=aXZoMHp6bmFtZGQw"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ripusudan-mehta-834a43283?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="./images/ankit-pic.jpg" alt="Ankit">
+                    </div>
+                    <h3>Ankit Kumar</h3>
+                    <p>Luxury Travel Designer</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100066459054444"><i class="fab fa-facebook"></i></a>
+                        <a href="https://github.com/Ankit85780"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/mr_ankit_85?igsh=MTZ5OGpmZ3lvanJmMA=="><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ankit-kumar-116a32360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Team Member 5 -->
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="./images/yash-pic.jpg" alt="Yash raj">
+                    </div>
+                    <h3>Yash Raj</h3>
+                    <p>Customer Experience</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1XbbHyfixb/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://github.com/yashhvardhann"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/_yashh_vardhan?igsh=MXRhaHY2Zzl4OWJvMg=="><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--================ Newsletter Section ================-->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get exclusive travel deals, insider tips, and inspiration delivered to your inbox.</p>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--================ Contact Section ================-->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Have questions? We're here to help plan your perfect getaway.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Travel Street, Patna City, Patna-800008</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@aerovia.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Monday - Friday: 9am - 6pm</p>
+                            <p>Saturday: 10am - 4pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="auth-modal" id="auth-modal">
+        <div class="auth-container">
+            <span class="close-modal">&times;</span>
+            
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Login</button>
+                <button class="tab-btn" data-tab="signup">Sign Up</button>
+            </div>
+            
+            <!--================ Login Form ================-->
+            <form id="login-form" class="auth-form active" data-form="login">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                    <a href="#" class="forgot-password" id="forgot-password">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <div class="social-login">
+                    <p>Or login with:</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </form>
+            
+            <!--================ Signup Form================ -->
+            <form id="signup-form" class="auth-form" data-form="signup">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                    <div class="password-strength">
+                        <span class="strength-bar"></span>
+                        <span class="strength-bar"></span>
+                        <span class="strength-bar"></span>
+                        <span class="strength-text">Password strength</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" required>
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+            </form>
+            
+            <!--================ Forgot Password Form ================-->
+            <form id="forgot-form" class="auth-form" data-form="forgot">
+                <div class="form-group">
+                    <label for="forgot-email">Email</label>
+                    <input type="email" id="forgot-email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Reset Password</button>
+                <p class="back-to-login">Remember your password? <a href="#" id="back-to-login">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!--================ Footer================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.png" alt="Wanderlust Adventures" class="footer-logo">
+                    <p>Making dream vacations a reality since 2010. We specialize in creating unforgettable travel experiences tailored to your desires.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Booking Conditions</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get special offers and travel inspiration.</p>
+                    <form>
+                        <input type="email" placeholder="Your email address" style="width: 170px; height: 23px; border-radius: 20px; padding: 5px; outline: none; border: none;">
+                        <button type="submit" class="btn btn-small btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aerovia. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
