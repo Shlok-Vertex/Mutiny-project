@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Travelers Feedback</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;700&display=swap');
+
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1c1e26, #2f3d4c);
+      color: #fff;
+      padding: 2rem;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 10px #00f2fe; }
+      50% { text-shadow: 0 0 20px #4facfe; }
+    }
+
+    .feedback-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 2rem;
+    }
+
+    .feedback-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0,255,255,0.1);
+      transform: translateY(30px);
+      opacity: 0;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .feedback-card.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00f2fe;
+      margin-bottom: 10px;
+      display: inline-block;
+      font-size: 2rem;
+      text-align: center;
+      line-height: 60px;
+    }
+
+    .stars {
+      color: #ffd700;
+      font-size: 1.2rem;
+    }
+
+    .feedback-card p {
+      font-style: italic;
+      margin: 10px 0;
+    }
+
+    .feedback-card h3 {
+      color: #00f2fe;
+      font-size: 1rem;
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      color: #fcd703;
+    }
+
+    button {
+      background: #00f2fe;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.3s;
+      margin: 10px;
+    }
+
+    button:hover {
+      background: #4facfe;
+      color: white;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .modal-content {
+      background: #1e2a38;
+      padding: 25px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .modal-content h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #00f2fe;
+    }
+
+    .modal-content input,
+    .modal-content textarea,
+    .modal-content select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      background: #fff;
+    }
+
+    .modal-content .star-select {
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-content button {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    /* Success Notification */
+    .notification {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #4facfe;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: none;
+      z-index: 100;
+      animation: slideIn 0.5s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { top: -50px; }
+      to { top: 10px; }
+    }
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1c1e26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+    pointer-events: none;
+}
+.loading-page.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+  </style>
+</head>
+<body>
+    <div class="loading-page">
+        <div class="loading-text">Loading...</div>
+        <div class="loading-spinner"></div>
+    </div>
+    <a href="./index.html" class="logo">
+        <button class="logo-button">
+            << Aerovia <i class="fa-solid fa-plane-departure"></i>
+        </button>
+    </a>
+    
+  <h1>Happy Travelers ✨</h1>
+
+  <!-- Notification -->
+  <div id="notification" class="notification">Feedback added successfully!</div>
+
+  <div class="feedback-container" id="feedbackContainer">
+    <!-- Default Feedback Cards -->
+    <div class="feedback-card active">
+      <div class="avatar">😊</div>
+      <div class="stars">★★★★★</div>
+      <p>"An unforgettable experience! Loved every bit of the journey."</p>
+      <h3>- ujjwal kumar</h3>
+      <div class="tagline">Advanture</div>
+      <div>
+        <button onclick="openEditModal('ujjwal kuamr', 'An unforgettable experience! Loved every bit of the journey.', 5, 'Advanture', 0)">Edit</button>
+        <button onclick="deleteFeedback(this)">Delete</button>
+      </div>
+    </div>
+    <div class="feedback-card active">
+      <div class="avatar">😊</div>
+      <div class="stars">★★★★☆</div>
+      <p>"The service was top-notch! Highly recommend this travel agency."</p>
+      <h3>- Shlok srivastava</h3>
+      <div class="tagline">Service</div>
+      <div>
+        <button onclick="openEditModal('Shlok srivastava', 'The service was top-notch! Highly recommend this travel agency.', 4, 'Service', 1)">Edit</button>
+        <button onclick="deleteFeedback(this)">Delete</button>
+      </div>
+    </div>
+    <!-- More Default Feedback Cards... -->
+  </div>
+
+  <button onclick="openModal()">Leave Your Feedback</button>
+
+  <!-- Modal for Feedback -->
+  <div class="modal" id="feedbackModal">
+    <div class="modal-content">
+      <h2>Leave Feedback</h2>
+      <input type="text" id="userName" placeholder="Your Name" />
+      <div class="star-select" id="starSelect">
+        <span onclick="setStars(1)">★</span>
+        <span onclick="setStars(2)">★</span>
+        <span onclick="setStars(3)">★</span>
+        <span onclick="setStars(4)">★</span>
+        <span onclick="setStars(5)">★</span>
+      </div>
+      <select id="feedbackCategory">
+        <option value="Experience">Experience</option>
+        <option value="Service">Service</option>
+        <option value="Food">Food</option>
+        <option value="Other">Other</option>
+        <option value="Travel">Travel</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Nature">Nature</option>
+        <option value="Culture">Culture</option>
+        <option value="Relaxation">Relaxation</option>
+        <option value="Sightseeing">Sightseeing</option>
+        <option value="Exploration">Exploration</option>
+        <option value="Fun">Fun</option>
+        <option value="Memories">Memories</option>
+        <option value="Joy">Joy</option>
+        <option value="Happiness">Happiness</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Excitement">Excitement</option>
+        <option value="Discovery">Discovery</option>
+        
+      </select>
+      <textarea id="userMessage" rows="3" placeholder="Your Feedback"></textarea>
+      <button onclick="submitFeedback()">Add Feedback</button>
+        <button onclick="closeModal()" style="background: #f44336;">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Modal for Edit Feedback -->
+  <div class="modal" id="editModal">
+    <div class="modal-content">
+      <h2>Edit Feedback</h2>
+      <input type="text" id="editName" placeholder="Your Name" />
+      <div class="star-select" id="editStarSelect">
+        <span onclick="setEditStars(1)">★</span>
+        <span onclick="setEditStars(2)">★</span>
+        <span onclick="setEditStars(3)">★</span>
+        <span onclick="setEditStars(4)">★</span>
+        <span onclick="setEditStars(5)">★</span>
+      </div>
+      <select id="editFeedbackCategory">
+        <option value="Experience">Experience</option>
+        <option value="Service">Service</option>
+        <option value="Food">Food</option>
+      </select>
+      <textarea id="editMessage" rows="3" placeholder="Your Feedback"></textarea>
+      <button onclick="saveEditFeedback()">Save Changes</button>
+      <button onclick="closeModal()" style="background: #f44336;">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    // Loading Page Animation
+    document.addEventListener("DOMContentLoaded", function() {
+      const loadingPage = document.querySelector('.loading-page');
+      setTimeout(() => {
+        loadingPage.classList.add('hidden');
+      }, 2000); // Adjust the duration as needed
+    });
+    let selectedStars = 5;
+    let currentCard = null;
+
+    function openModal() {
+      document.getElementById('feedbackModal').style.display = 'flex';
+    }
+
+    function openEditModal(name, message, stars, category, cardIndex) {
+      currentCard = cardIndex;
+      document.getElementById('editName').value = name;
+      document.getElementById('editMessage').value = message;
+      setEditStars(stars);
+      document.getElementById('editFeedbackCategory').value = category;
+      document.getElementById('editModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('feedbackModal').style.display = 'none';
+      document.getElementById('editModal').style.display = 'none';
+    }
+
+    window.onclick = function(e) {
+      if (e.target.id === 'feedbackModal' || e.target.id === 'editModal') closeModal();
+    }
+
+    function setStars(count) {
+      selectedStars = count;
+      const stars = document.querySelectorAll('#starSelect span');
+      stars.forEach((star, i) => {
+        star.style.color = i < count ? '#ffd700' : '#999';
+      });
+    }
+
+    function setEditStars(count) {
+      selectedStars = count;
+      const stars = document.querySelectorAll('#editStarSelect span');
+      stars.forEach((star, i) => {
+        star.style.color = i < count ? '#ffd700' : '#999';
+      });
+    }
+
+    function submitFeedback() {
+      const name = document.getElementById('userName').value.trim();
+      const msg = document.getElementById('userMessage').value.trim();
+      const category = document.getElementById('feedbackCategory').value;
+      if (!name || !msg) {
+        alert("Please enter name and feedback.");
+        return;
+      }
+
+      const container = document.getElementById('feedbackContainer');
+      const avatarId = Math.floor(Math.random() * 70 + 1);
+      const card = document.createElement('div');
+      card.className = 'feedback-card';
+      card.innerHTML = `
+        <div class="avatar">😊</div>
+        <div class="stars">${'★'.repeat(selectedStars)}${'☆'.repeat(5 - selectedStars)}</div>
+        <p>"${msg}"</p>
+        <h3>- ${name}</h3>
+        <div class="tagline">${category}</div>
+        <div>
+          <button onclick="openEditModal('${name}', '${msg}', ${selectedStars}, '${category}', ${container.children.length})">Edit</button>
+          <button onclick="deleteFeedback(this)">Delete</button>
+        </div>
+      `;
+      container.append(card);
+      setTimeout(() => card.classList.add('active'), 100);
+
+      showNotification("Feedback added successfully!");
+      closeModal();
+      document.getElementById('userName').value = '';
+      document.getElementById('userMessage').value = '';
+      setStars(5);
+    }
+
+    function saveEditFeedback() {
+      const name = document.getElementById('editName').value.trim();
+      const msg = document.getElementById('editMessage').value.trim();
+      const category = document.getElementById('editFeedbackCategory').value;
+
+      if (!name || !msg) {
+        alert("Please enter name and feedback.");
+        return;
+      }
+
+      const container = document.getElementById('feedbackContainer');
+      const card = container.children[currentCard];
+      card.querySelector('h3').textContent = `- ${name}`;
+      card.querySelector('p').textContent = `"${msg}"`;
+      card.querySelector('.tagline').textContent = category;
+      card.querySelector('.stars').innerHTML = '★'.repeat(selectedStars) + '☆'.repeat(5 - selectedStars);
+
+      showNotification("Feedback edited successfully!");
+      closeModal();
+    }
+
+    function deleteFeedback(button) {
+      const container = document.getElementById('feedbackContainer');
+      container.removeChild(button.closest('.feedback-card'));
+      showNotification("Feedback deleted successfully!");
+    }
+
+    function showNotification(message) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.style.display = 'block';
+      setTimeout(() => notification.style.display = 'none', 3000);
+    }
+  </script>
+
+</body>
+</html>
