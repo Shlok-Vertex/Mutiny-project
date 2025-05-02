@@ -1599,14 +1599,14 @@ img {
 
 /* Typing Animation */
 .typed-text {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: 600;
 }
 
 .cursor {
     display: inline-block;
     width: 3px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     animation: blink 1s infinite;
 }
 
@@ -1615,9 +1615,9 @@ img {
 }
 
 @keyframes blink {
-    0% { background-color: var(--primary-color); }
-    49% { background-color: var(--primary-color); }
+    0% { background-color: var(--secondary-color); }
+    49% { background-color: var(--secondary-color); }
     50% { background-color: transparent; }
     99% { background-color: transparent; }
-    100% { background-color: var(--primary-color); }
+    100% { background-color: var(--secondary-color); }
 }
