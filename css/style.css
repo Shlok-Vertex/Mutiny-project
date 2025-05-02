@@ -1595,3 +1595,29 @@ img {
         font-size: 1rem;
     }
 }
+
+
+/* Typing Animation */
+.typed-text {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--primary-color);
+    animation: blink 1s infinite;
+}
+
+.cursor.typing {
+    animation: none;
+}
+
+@keyframes blink {
+    0% { background-color: var(--primary-color); }
+    49% { background-color: var(--primary-color); }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100% { background-color: var(--primary-color); }
+}
