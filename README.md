@@ -93,3 +93,12 @@ The word *Aerovia* is derived from the *Aeroplanes*  because the aeroplanes trav
 - Newsletter update notifications to user.
 - Contact section connect with Backend and Database for authorization and authentications.
 - Working booking part of the website with payment integration.
+
+---
+
+## ✨ New Features
+- **🌟 Redesigned Interface**: Improved layout for better usability and aesthetics.
+- **📱 Mobile Optimization**: Fully responsive design for all screen sizes.
+- **🌐 Feedback Support**: Added feedback support for global audience.
+- **🪄 Enhance hero part**: Typing animation in the hero section.
+---
