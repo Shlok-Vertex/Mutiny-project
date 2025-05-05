@@ -99,7 +99,6 @@ The word *Aerovia* is derived from the *Aeroplanes*  because the aeroplanes trav
 ## ✨ New Features
 - **🌟 Redesigned Interface**: Improved layout for better usability and aesthetics.
 - **📱 Mobile Optimization**: Fully responsive design for all screen sizes.
-- **🌐 Feedback Support**: Added feedback support for global audience.
-- **🪄 Enhance hero part**: Typing animation in the hero section.
-
+- **🌐 Feedback Support**: Added feedback support for global audience and a loading animation also.
+- **🪄 Enhance hero part**: Typing animation in the hero section. 
 ---
