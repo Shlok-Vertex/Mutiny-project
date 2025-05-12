@@ -101,5 +101,5 @@ The word *Aerovia* is derived from the *Aeroplanes*  because the aeroplanes trav
 - **📱 Mobile Optimization**: Fully responsive design for all screen sizes.
 - **🌐 Feedback Support**: Added feedback support for global audience and a loading animation also.
 - **🪄 Enhance hero part**: Typing animation in the hero section. 
-- **Scroll bar**: Style the scroll bar
+- **📜 Scroll bar**: Style the scroll bar.
 ---
