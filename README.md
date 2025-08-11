@@ -1,4 +1,4 @@
-# 🌍✈️ Travelling Website Project Information
+# 🌍✈️ Travelling Website Project Information. 
 
 ## 🧭 Overview
 The word *Aerovia* is derived from the *Aeroplanes*  because the aeroplanes travel in the whole world. The Travelling Website, **Aerovia**, is a platform which is designed to provide users with an exceptional travel planning and booking experience. It offers a variety of features, including destination exploration, travel packages, booking forms, and team information. The website is crafted with a modern design and user-friendly interface to ensure seamless navigation.
